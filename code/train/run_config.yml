@@ -36,10 +36,11 @@ environment:
     condaDependenciesFile: environment.yml
     # The base conda environment used for incremental environment creation.
     baseCondaEnvironment:
+  '''
   # Docker details
   docker:
     # Set True to perform this run inside a Docker container.
-    enabled: true
+    enabled: false
     # Base image used for Docker-based runs. Mutually exclusive with base_dockerfile.
     baseImage: mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.2-cudnn8-ubuntu18.04
     # Base Dockerfile used for Docker-based runs. Mutually exclusive with base_image
@@ -82,6 +83,7 @@ environment:
   r:
   # Inferencing stack version
   inferencingStackVersion:
+'''
 # History details.
 history:
   # Enable history tracking -- this allows status, logs, metrics, and outputs
@@ -92,6 +94,7 @@ history:
   # Directories to sync with FileWatcher.
   directoriesToWatch:
   - logs
+'''
 # Spark configuration details.
 spark:
   # The Spark configuration.
@@ -109,9 +112,11 @@ tensorflow:
   # The number of parameter server tasks.
   parameterServerCount: 1
 # Mpi details.
+
 mpi:
   # When using MPI, number of processes per node.
   processCountPerNode: 1
+'''  
 # data reference configuration details
 dataReferences: {}
 # The configuration details for data.
