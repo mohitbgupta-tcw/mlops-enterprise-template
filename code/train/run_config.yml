@@ -36,54 +36,6 @@ environment:
     condaDependenciesFile: environment.yml
     # The base conda environment used for incremental environment creation.
     baseCondaEnvironment:
-  '''
-  # Docker details
-  docker:
-    # Set True to perform this run inside a Docker container.
-    enabled: false
-    # Base image used for Docker-based runs. Mutually exclusive with base_dockerfile.
-    baseImage: mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.2-cudnn8-ubuntu18.04
-    # Base Dockerfile used for Docker-based runs. Mutually exclusive with base_image
-    baseDockerfile:
-    # Set False if necessary to work around shared volume bugs.
-    sharedVolumes: true
-    # Shared memory size for Docker container. Default is 2g.
-    shmSize: 2g
-    # Extra arguments to the Docker run command.
-    arguments: []
-    # Image registry that contains the base image.
-    baseImageRegistry:
-      # DNS name or IP address of azure container registry(ACR)
-      address:
-      # The username for ACR
-      username:
-      # The password for ACR
-      password:
-  # Spark details
-  spark:
-    # List of spark repositories.
-    repositories: []
-    # The packages to use.
-    packages: []
-    # Whether to precache the packages.
-    precachePackages: true
-  # Databricks details
-  databricks:
-    # List of maven libraries.
-    mavenLibraries: []
-    # List of PyPi libraries
-    pypiLibraries: []
-    # List of RCran libraries
-    rcranLibraries: []
-    # List of JAR libraries
-    jarLibraries: []
-    # List of Egg libraries
-    eggLibraries: []
-  # R details
-  r:
-  # Inferencing stack version
-  inferencingStackVersion:
-'''
 # History details.
 history:
   # Enable history tracking -- this allows status, logs, metrics, and outputs
@@ -93,30 +45,7 @@ history:
   snapshotProject: true
   # Directories to sync with FileWatcher.
   directoriesToWatch:
-  - logs
-'''
-# Spark configuration details.
-spark:
-  # The Spark configuration.
-  configuration:
-    spark.app.name: Azure ML Experiment
-    spark.yarn.maxAppAttempts: 1
-# HDI details.
-hdi:
-  # Yarn deploy mode. Options are cluster and client.
-  yarnDeployMode: cluster
-# Tensorflow details.
-tensorflow:
-  # The number of worker tasks.
-  workerCount: 1
-  # The number of parameter server tasks.
-  parameterServerCount: 1
-# Mpi details.
-
-mpi:
-  # When using MPI, number of processes per node.
-  processCountPerNode: 1
-'''  
+  - logs  
 # data reference configuration details
 dataReferences: {}
 # The configuration details for data.
